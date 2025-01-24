@@ -9,6 +9,9 @@ import * as vscode from 'vscode';
 
 
 export function activate(context: vscode.ExtensionContext): void {
+    
+    const config = vscode.workspace.getConfiguration('breadcrumbs');
+
     // Register a document symbol provider for Pine Script files.
     const pineScriptSymbolProvider = vscode.languages.registerDocumentSymbolProvider(
         { scheme: 'file', language: 'pine' },
@@ -16,6 +19,8 @@ export function activate(context: vscode.ExtensionContext): void {
     );
 
     context.subscriptions.push(pineScriptSymbolProvider);
+
+    vscode.commands.executeCommand('breadcrumbs.focus');
 }
 
 /**
