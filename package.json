@@ -1,6 +1,7 @@
 {
   "name": "tag-pinescript-functions",
-  "displayName": "tag_pinescript_functions",
+  "displayName": "Tag Pinescript Functions",
+  "publisher": "LuckxFactory",
   "description": "use to tag functions for pine scripts",
   "version": "0.0.1",
   "engines": {
