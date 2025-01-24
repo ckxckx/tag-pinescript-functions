@@ -1,3 +1,8 @@
+# pinescript 函数识别插件
+
+
+
+---
 # tag-pinescript-functions README
 
 This is the README for your extension "tag-pinescript-functions". After writing up a brief description, we recommend including the following sections.
