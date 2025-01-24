@@ -2,6 +2,11 @@
 
 测试 vscode github 插件
 
+### 使用chatgpt辅助开发
+```
+我要为vscode 编写一个插件，用于在Breadcrumbs上，显示 pine script 脚本的各个级别的函数，请给予我足够多的提示
+```
+
 ---
 # tag-pinescript-functions README
 
