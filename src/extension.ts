@@ -35,27 +35,26 @@ class PineScriptSymbolProvider implements vscode.DocumentSymbolProvider {
      */
     provideDocumentSymbols(document: vscode.TextDocument, token: vscode.CancellationToken): vscode.DocumentSymbol[] {
         const symbols: vscode.DocumentSymbol[] = [];
-        const regex = /^(?:\s*\w+\s+)?(\bfunction\b|\bmethod\b)\s+(\w+)\s*\(/gm;
+
+        // 正则匹配 '=>' 定义的函数
+        const arrowFunctionRegex = /^(?:\s*\w+\s+)?(\w+)\s*\(\s*.*\)\s*=>/gm;
+
         const text = document.getText();
         let match: RegExpExecArray | null;
 
-        while ((match = regex.exec(text)) !== null) {
-            const [_, type, name] = match;
+        // 处理使用 '=>' 的箭头函数声明
+        while ((match = arrowFunctionRegex.exec(text)) !== null) {
+            const [_, name] = match;
             const line = document.positionAt(match.index).line;
             const range = new vscode.Range(
                 new vscode.Position(line, 0),
                 new vscode.Position(line, match[0].length)
             );
 
-            const symbolKind =
-                type === 'function'
-                    ? vscode.SymbolKind.Function
-                    : vscode.SymbolKind.Method;
-
             symbols.push(new vscode.DocumentSymbol(
                 name,
                 '',
-                symbolKind,
+                vscode.SymbolKind.Function, // 视为普通函数
                 range,
                 range
             ));
