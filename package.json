@@ -3,9 +3,10 @@
   "displayName": "Tag Pinescript Functions",
   "publisher": "LuckxFactory",
   "repository": "https://github.com/ckxckx/tag-pinescript-functions",
+  "icon": "icon.png",
   "license": "MIT",
   "description": "use to tag functions for pine scripts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.96.0"
   },
