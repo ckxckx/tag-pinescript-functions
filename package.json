@@ -2,8 +2,10 @@
   "name": "tag-pinescript-functions",
   "displayName": "Tag Pinescript Functions",
   "publisher": "LuckxFactory",
+  "repository": "https://github.com/ckxckx/tag-pinescript-functions",
+  "license": "MIT",
   "description": "use to tag functions for pine scripts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.96.0"
   },
